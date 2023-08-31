@@ -1,0 +1,588 @@
+{
+  "phamNhan": {
+    "id": "phamNhan",
+    "subId": null,
+    "prevId": null,
+    "nextId": "tinhCap-nhatTinh-soDoan",
+    "canhGioi": "Phàm Nhân",
+    "xungHo": "Phàm Nhân",
+    "tuVi": 0,
+    "chucNang": null,
+    "dieuKien": null,
+    "tieuCanhGioi": null
+  },
+  "tinhCap": {
+    "id": "tinhCap",
+    "subId": null,
+    "prevId": "phamNhan",
+    "nextId": "nguyetCap",
+    "canhGioi": "Tinh Cấp",
+    "xungHo": "Tinh Cấp Võ Sĩ",
+    "tuVi": 10,
+    "chucNang": null,
+    "dieuKien": null,
+    "tieuCanhGioi": [
+      {
+        "id": "nhatTinh",
+        "subId": "tinhCap",
+        "prevId": "phamNhan",
+        "nextId": "tinhCap-nhiTinh",
+        "canhGioi": "Nhất Tinh",
+        "xungHo": "Nhất Tinh Võ Sĩ",
+        "tuVi": 10,
+        "chucNang": null,
+        "dieuKien": null,
+        "tieuCanhGioi": [
+          {
+            "id": "soDoan",
+            "subId": "tinhCap-nhatTinh",
+            "prevId": "phamNhan",
+            "nextId": "tinhCap-nhatTinh-trungDoan",
+            "canhGioi": "Sơ Đoạn",
+            "xungHo": "Nhất Tinh Võ Sĩ - Sơ Đoạn",
+            "tuVi": 10,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "trungDoan",
+            "subId": "tinhCap-nhatTinh",
+            "prevId": "tinhCap-nhatTinh-soDoan",
+            "nextId": "tinhCap-nhatTinh-caoDoan",
+            "canhGioi": "Trung Đoạn",
+            "xungHo": "Nhất Tinh Võ Sĩ - Trung Đoạn",
+            "tuVi": 20,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "caoDoan",
+            "subId": "tinhCap-nhatTinh",
+            "prevId": "tinhCap-nhatTinh-trungDoan",
+            "nextId": "tinhCap-nhatTinh-dinhPhong",
+            "canhGioi": "Cao Đoạn",
+            "xungHo": "Nhất Tinh Võ Sĩ - Cao Đoạn",
+            "tuVi": 30,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "dinhPhong",
+            "subId": "tinhCap-nhatTinh",
+            "prevId": "tinhCap-nhatTinh-caoDoan",
+            "nextId": "tinhCap-nhiTinh-soDoan",
+            "canhGioi": "Đỉnh Phong",
+            "xungHo": "Nhất Tinh Võ Sĩ - Đỉnh Phong",
+            "tuVi": 40,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          }
+        ]
+      },
+      {
+        "id": "nhiTinh",
+        "subId": "tinhCap",
+        "prevId": "tinhCap-nhatTinh",
+        "nextId": "tinhCap-tamTinh",
+        "canhGioi": "Nhị Tinh",
+        "xungHo": "Nhị Tinh Võ Sĩ",
+        "tuVi": 50,
+        "chucNang": null,
+        "dieuKien": null,
+        "tieuCanhGioi": [
+          {
+            "id": "soDoan",
+            "subId": "tinhCap-nhiTinh",
+            "prevId": "tinhCap-nhatTinh-caoDoan",
+            "nextId": "tinhCap-nhiTinh-trungDoan",
+            "canhGioi": "Sơ Đoạn",
+            "xungHo": "Nhị Tinh Võ Sĩ - Sơ Đoạn",
+            "tuVi": 50,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "trungDoan",
+            "subId": "tinhCap-nhiTinh",
+            "prevId": "tinhCap-nhiTinh-soDoan",
+            "nextId": "tinhCap-nhiTinh-caoDoan",
+            "canhGioi": "Trung Đoạn",
+            "xungHo": "Nhị Tinh Võ Sĩ - Trung Đoạn",
+            "tuVi": 60,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "caoDoan",
+            "subId": "tinhCap-nhiTinh",
+            "prevId": "tinhCap-nhiTinh-trungDoan",
+            "nextId": "tinhCap-nhiTinh-dinhPhong",
+            "canhGioi": "Cao Đoạn",
+            "xungHo": "Nhị Tinh Võ Sĩ - Cao Đoạn",
+            "tuVi": 70,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "dinhPhong",
+            "subId": "tinhCap-nhiTinh",
+            "prevId": "tinhCap-nhiTinh-caoDoan",
+            "nextId": "tinhCap-tamTinh-soDoan",
+            "canhGioi": "Đỉnh Phong",
+            "xungHo": "Nhị Tinh Võ Sĩ - Đỉnh Phong",
+            "tuVi": 80,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          }
+        ]
+      },
+      {
+        "id": "tamTinh",
+        "subId": "tinhCap",
+        "prevId": "tinhCap-nhiTinh",
+        "nextId": "tinhCap-tuTinh",
+        "canhGioi": "Tam Tinh",
+        "xungHo": "Tam Tinh Võ Sĩ",
+        "tuVi": 90,
+        "chucNang": null,
+        "dieuKien": null,
+        "tieuCanhGioi": [
+          {
+            "id": "soDoan",
+            "subId": "tinhCap-tamTinh",
+            "prevId": "tinhCap-nhiTinh-caoDoan",
+            "nextId": "tinhCap-tamTinh-trungDoan",
+            "canhGioi": "Sơ Đoạn",
+            "xungHo": "Tam Tinh Võ Sĩ - Sơ Đoạn",
+            "tuVi": 90,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "trungDoan",
+            "subId": "tinhCap-tamTinh",
+            "prevId": "tinhCap-tamTinh-soDoan",
+            "nextId": "tinhCap-tamTinh-caoDoan",
+            "canhGioi": "Trung Đoạn",
+            "xungHo": "Tam Tinh Võ Sĩ - Trung Đoạn",
+            "tuVi": 100,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "caoDoan",
+            "subId": "tinhCap-tamTinh",
+            "prevId": "tinhCap-tamTinh-trungDoan",
+            "nextId": "tinhCap-tamTinh-dinhPhong",
+            "canhGioi": "Cao Đoạn",
+            "xungHo": "Tam Tinh Võ Sĩ - Cao Đoạn",
+            "tuVi": 110,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "dinhPhong",
+            "subId": "tinhCap-tamTinh",
+            "prevId": "tinhCap-tamTinh-caoDoan",
+            "nextId": "tinhCap-tuTinh-soDoan",
+            "canhGioi": "Đỉnh Phong",
+            "xungHo": "Tam Tinh Võ Sĩ - Đỉnh Phong",
+            "tuVi": 120,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          }
+        ]
+      },
+      {
+        "id": "tuTinh",
+        "subId": "tinhCap",
+        "prevId": "tinhCap-tamTinh",
+        "nextId": "tinhCap-nguTinh",
+        "canhGioi": "Tứ Tinh",
+        "xungHo": "Tứ Tinh Võ Sĩ",
+        "tuVi": 130,
+        "chucNang": null,
+        "dieuKien": null,
+        "tieuCanhGioi": [
+          {
+            "id": "soDoan",
+            "subId": "tinhCap-tuTinh",
+            "prevId": "tinhCap-tamTinh-caoDoan",
+            "nextId": "tinhCap-tuTinh-trungDoan",
+            "canhGioi": "Sơ Đoạn",
+            "xungHo": "Tứ Tinh Võ Sĩ - Sơ Đoạn",
+            "tuVi": 130,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "trungDoan",
+            "subId": "tinhCap-tuTinh",
+            "prevId": "tinhCap-tuTinh-soDoan",
+            "nextId": "tinhCap-tuTinh-caoDoan",
+            "canhGioi": "Trung Đoạn",
+            "xungHo": "Tứ Tinh Võ Sĩ - Trung Đoạn",
+            "tuVi": 140,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "caoDoan",
+            "subId": "tinhCap-tuTinh",
+            "prevId": "tinhCap-tuTinh-trungDoan",
+            "nextId": "tinhCap-tuTinh-dinhPhong",
+            "canhGioi": "Cao Đoạn",
+            "xungHo": "Tứ Tinh Võ Sĩ - Cao Đoạn",
+            "tuVi": 150,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "dinhPhong",
+            "subId": "tinhCap-tuTinh",
+            "prevId": "tinhCap-tuTinh-caoDoan",
+            "nextId": "tinhCap-nguTinh-soDoan",
+            "canhGioi": "Đỉnh Phong",
+            "xungHo": "Tứ Tinh Võ Sĩ - Đỉnh Phong",
+            "tuVi": 160,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          }
+        ]
+      },
+      {
+        "id": "nguTinh",
+        "subId": "tinhCap",
+        "prevId": "tinhCap-tuTinh",
+        "nextId": "tinhCap-lucTinh",
+        "canhGioi": "Ngũ Tinh",
+        "xungHo": "Ngũ Tinh Võ Sĩ",
+        "tuVi": 170,
+        "chucNang": null,
+        "dieuKien": null,
+        "tieuCanhGioi": [
+          {
+            "id": "soDoan",
+            "subId": "tinhCap-nguTinh",
+            "prevId": "tinhCap-tuTinh-caoDoan",
+            "nextId": "tinhCap-nguTinh-trungDoan",
+            "canhGioi": "Sơ Đoạn",
+            "xungHo": "Ngũ Tinh Võ Sĩ - Sơ Đoạn",
+            "tuVi": 170,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "trungDoan",
+            "subId": "tinhCap-nguTinh",
+            "prevId": "tinhCap-nguTinh-soDoan",
+            "nextId": "tinhCap-nguTinh-caoDoan",
+            "canhGioi": "Trung Đoạn",
+            "xungHo": "Ngũ Tinh Võ Sĩ - Trung Đoạn",
+            "tuVi": 180,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "caoDoan",
+            "subId": "tinhCap-nguTinh",
+            "prevId": "tinhCap-nguTinh-trungDoan",
+            "nextId": "tinhCap-nguTinh-dinhPhong",
+            "canhGioi": "Cao Đoạn",
+            "xungHo": "Ngũ Tinh Võ Sĩ - Cao Đoạn",
+            "tuVi": 190,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "dinhPhong",
+            "subId": "tinhCap-nguTinh",
+            "prevId": "tinhCap-nguTinh-caoDoan",
+            "nextId": "tinhCap-lucTinh-soDoan",
+            "canhGioi": "Đỉnh Phong",
+            "xungHo": "Ngũ Tinh Võ Sĩ - Đỉnh Phong",
+            "tuVi": 200,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          }
+        ]
+      },
+      {
+        "id": "lucTinh",
+        "subId": "tinhCap",
+        "prevId": "tinhCap-nguTinh",
+        "nextId": "tinhCap-thatTinh",
+        "canhGioi": "Lục Tinh",
+        "xungHo": "Lục Tinh Võ Sĩ",
+        "tuVi": 210,
+        "chucNang": null,
+        "dieuKien": null,
+        "tieuCanhGioi": [
+          {
+            "id": "soDoan",
+            "subId": "tinhCap-lucTinh",
+            "prevId": "tinhCap-nguTinh-caoDoan",
+            "nextId": "tinhCap-lucTinh-trungDoan",
+            "canhGioi": "Sơ Đoạn",
+            "xungHo": "Lục Tinh Võ Sĩ - Sơ Đoạn",
+            "tuVi": 210,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "trungDoan",
+            "subId": "tinhCap-lucTinh",
+            "prevId": "tinhCap-lucTinh-soDoan",
+            "nextId": "tinhCap-lucTinh-caoDoan",
+            "canhGioi": "Trung Đoạn",
+            "xungHo": "Lục Tinh Võ Sĩ - Trung Đoạn",
+            "tuVi": 220,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "caoDoan",
+            "subId": "tinhCap-lucTinh",
+            "prevId": "tinhCap-lucTinh-trungDoan",
+            "nextId": "tinhCap-lucTinh-dinhPhong",
+            "canhGioi": "Cao Đoạn",
+            "xungHo": "Lục Tinh Võ Sĩ - Cao Đoạn",
+            "tuVi": 230,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "dinhPhong",
+            "subId": "tinhCap-lucTinh",
+            "prevId": "tinhCap-lucTinh-caoDoan",
+            "nextId": "tinhCap-thatTinh-soDoan",
+            "canhGioi": "Đỉnh Phong",
+            "xungHo": "Lục Tinh Võ Sĩ - Đỉnh Phong",
+            "tuVi": 240,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          }
+        ]
+      },
+      {
+        "id": "thatTinh",
+        "subId": "tinhCap",
+        "prevId": "tinhCap-lucTinh",
+        "nextId": "tinhCap-batTinh",
+        "canhGioi": "Thất Tinh",
+        "xungHo": "Thất Tinh Võ Sĩ",
+        "tuVi": 250,
+        "chucNang": null,
+        "dieuKien": null,
+        "tieuCanhGioi": [
+          {
+            "id": "soDoan",
+            "subId": "tinhCap-thatTinh",
+            "prevId": "tinhCap-lucTinh-caoDoan",
+            "nextId": "tinhCap-thatTinh-trungDoan",
+            "canhGioi": "Sơ Đoạn",
+            "xungHo": "Thất Tinh Võ Sĩ - Sơ Đoạn",
+            "tuVi": 250,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "trungDoan",
+            "subId": "tinhCap-thatTinh",
+            "prevId": "tinhCap-thatTinh-soDoan",
+            "nextId": "tinhCap-thatTinh-caoDoan",
+            "canhGioi": "Trung Đoạn",
+            "xungHo": "Thất Tinh Võ Sĩ - Trung Đoạn",
+            "tuVi": 260,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "caoDoan",
+            "subId": "tinhCap-thatTinh",
+            "prevId": "tinhCap-thatTinh-trungDoan",
+            "nextId": "tinhCap-thatTinh-dinhPhong",
+            "canhGioi": "Cao Đoạn",
+            "xungHo": "Thất Tinh Võ Sĩ - Cao Đoạn",
+            "tuVi": 270,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "dinhPhong",
+            "subId": "tinhCap-thatTinh",
+            "prevId": "tinhCap-thatTinh-caoDoan",
+            "nextId": "tinhCap-batTinh-soDoan",
+            "canhGioi": "Đỉnh Phong",
+            "xungHo": "Thất Tinh Võ Sĩ - Đỉnh Phong",
+            "tuVi": 280,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          }
+        ]
+      },
+      {
+        "id": "batTinh",
+        "subId": "tinhCap",
+        "prevId": "tinhCap-thatTinh",
+        "nextId": "tinhCap-cuuTinh",
+        "canhGioi": "Bát Tinh",
+        "xungHo": "Bát Tinh Võ Sĩ",
+        "tuVi": 290,
+        "chucNang": null,
+        "dieuKien": null,
+        "tieuCanhGioi": [
+          {
+            "id": "soDoan",
+            "subId": "tinhCap-batTinh",
+            "prevId": "tinhCap-thatTinh-caoDoan",
+            "nextId": "tinhCap-batTinh-trungDoan",
+            "canhGioi": "Sơ Đoạn",
+            "xungHo": "Bát Tinh Võ Sĩ - Sơ Đoạn",
+            "tuVi": 290,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "trungDoan",
+            "subId": "tinhCap-batTinh",
+            "prevId": "tinhCap-batTinh-soDoan",
+            "nextId": "tinhCap-batTinh-caoDoan",
+            "canhGioi": "Trung Đoạn",
+            "xungHo": "Bát Tinh Võ Sĩ - Trung Đoạn",
+            "tuVi": 300,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "caoDoan",
+            "subId": "tinhCap-batTinh",
+            "prevId": "tinhCap-batTinh-trungDoan",
+            "nextId": "tinhCap-batTinh-dinhPhong",
+            "canhGioi": "Cao Đoạn",
+            "xungHo": "Bát Tinh Võ Sĩ - Cao Đoạn",
+            "tuVi": 310,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "dinhPhong",
+            "subId": "tinhCap-batTinh",
+            "prevId": "tinhCap-batTinh-caoDoan",
+            "nextId": "tinhCap-cuuTinh-soDoan",
+            "canhGioi": "Đỉnh Phong",
+            "xungHo": "Bát Tinh Võ Sĩ - Đỉnh Phong",
+            "tuVi": 320,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          }
+        ]
+      },
+      {
+        "id": "cuuTinh",
+        "subId": "tinhCap",
+        "prevId": "tinhCap-batTinh",
+        "nextId": "nguyetCap",
+        "canhGioi": "Cửu Tinh",
+        "xungHo": "Cửu Tinh Võ Sĩ",
+        "tuVi": 330,
+        "chucNang": null,
+        "dieuKien": null,
+        "tieuCanhGioi": [
+          {
+            "id": "soDoan",
+            "subId": "tinhCap-cuuTinh",
+            "prevId": "tinhCap-batTinh-caoDoan",
+            "nextId": "tinhCap-cuuTinh-trungDoan",
+            "canhGioi": "Sơ Đoạn",
+            "xungHo": "Cửu Tinh Võ Sĩ - Sơ Đoạn",
+            "tuVi": 330,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "trungDoan",
+            "subId": "tinhCap-cuuTinh",
+            "prevId": "tinhCap-cuuTinh-soDoan",
+            "nextId": "tinhCap-cuuTinh-caoDoan",
+            "canhGioi": "Trung Đoạn",
+            "xungHo": "Cửu Tinh Võ Sĩ - Trung Đoạn",
+            "tuVi": 340,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "caoDoan",
+            "subId": "tinhCap-cuuTinh",
+            "prevId": "tinhCap-cuuTinh-trungDoan",
+            "nextId": "tinhCap-cuuTinh-dinhPhong",
+            "canhGioi": "Cao Đoạn",
+            "xungHo": "Cửu Tinh Võ Sĩ - Cao Đoạn",
+            "tuVi": 350,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          },
+          {
+            "id": "dinhPhong",
+            "subId": "tinhCap-cuuTinh",
+            "prevId": "tinhCap-cuuTinh-caoDoan",
+            "nextId": "nguyetCap",
+            "canhGioi": "Đỉnh Phong",
+            "xungHo": "Cửu Tinh Võ Sĩ - Đỉnh Phong",
+            "tuVi": 360,
+            "chucNang": null,
+            "dieuKien": null,
+            "tieuCanhGioi": null
+          }
+        ]
+      }
+    ]
+  },
+  "nguyetCap": {
+    "id": "nguyetCap",
+    "subId": null,
+    "prevId": "tinhCap",
+    "nextId": null,
+    "canhGioi": "Nguyệt Cấp",
+    "xungHo": "Nguyệt Cấp Cường Giả",
+    "tuVi": 500,
+    "chucNang": null,
+    "dieuKien": null,
+    "tieuCanhGioi": null
+  }
+}

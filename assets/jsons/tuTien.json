@@ -1,0 +1,12 @@
+[
+  {
+    "id": "dauLaDaiLuc",
+    "name": "Đấu La Đại Lục",
+    "path": "assets/jsons/tuTiens/dauLaDaiLuc/dauLaDaiLuc.json"
+  },
+  {
+    "id": "quocVuongVanTue",
+    "name": "Quốc Vương Vạn Tuế",
+    "path": "assets/jsons/tuTiens/quocVuongVanTue/quocVuongVanTue.json"
+  }
+]

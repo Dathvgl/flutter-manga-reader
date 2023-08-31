@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>189724068141-jnjgl9e6r56qg65cdqmavhj9d13nvgk0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.189724068141-jnjgl9e6r56qg65cdqmavhj9d13nvgk0</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>189724068141-dlm10347vj284e4g6s2fs5fua8r66unn.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyABDnpHeNOoDKirOHogYJdgdGRIYqL48hw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>189724068141</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.flutterCrawl</string>
+	<key>PROJECT_ID</key>
+	<string>crawlstorage</string>
+	<key>STORAGE_BUCKET</key>
+	<string>crawlstorage.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:189724068141:ios:525b732f2f509a530f2ba4</string>
+</dict>
+</plist>
