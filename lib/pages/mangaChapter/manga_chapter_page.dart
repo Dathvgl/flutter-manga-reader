@@ -6,34 +6,11 @@ import 'package:flutter_crawl/blocs/user/user_bloc.dart';
 import 'package:flutter_crawl/components/scaffold.dart';
 import 'package:flutter_crawl/components/shimmer.dart';
 import 'package:flutter_crawl/cubits/mangaType/manga_type_cubit.dart';
-import 'package:flutter_crawl/cubits/userCultivation/user_cultivation_cubit.dart';
 import 'package:flutter_crawl/enum.dart';
 import 'package:flutter_crawl/models/manga/manga_chapter_image.dart';
 import 'package:flutter_crawl/pages/mangaChapter/manga_chapter_end_drawer.dart';
 import 'package:flutter_crawl/pages/mangaChapter/manga_chapter_item.dart';
 import 'package:go_router/go_router.dart';
-
-class MangaChapterPageInherited extends InheritedWidget {
-  final String detailId;
-  final MangaChapterImageModel model;
-
-  const MangaChapterPageInherited({
-    super.key,
-    required this.detailId,
-    required this.model,
-    required super.child,
-  });
-
-  static MangaChapterPageInherited? of(BuildContext context) {
-    return context
-        .dependOnInheritedWidgetOfExactType<MangaChapterPageInherited>();
-  }
-
-  @override
-  bool updateShouldNotify(MangaChapterPageInherited oldWidget) {
-    return false;
-  }
-}
 
 class MangaChapterPage extends StatelessWidget {
   final String? detailId;
@@ -49,17 +26,14 @@ class MangaChapterPage extends StatelessWidget {
     required String detailId,
     required MangaChapterImageModel model,
   }) {
-    return MangaChapterPageInherited(
+    return MangaChapterItem(
       detailId: detailId,
       model: model,
-      child: const MangaChapterItem(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    bool initUpdateCultivation = false;
-
     if (detailId == null || chapterId == null) {
       return const Center(
         child: Text("Manga chapter not found"),
@@ -88,30 +62,17 @@ class MangaChapterPage extends StatelessWidget {
                       ));
                 }
 
-                return BlocBuilder<UserCultivationCubit, UserCultivationState>(
-                  builder: (context, state) {
-                    if (!initUpdateCultivation) {
-                      initUpdateCultivation = true;
-                      context.read<UserCultivationCubit>().update(
-                            idCanhGioi: state.cultivation.idCanhGioi,
-                            tuVi: state.cultivation.tuVi,
-                            tuViTheo: 1,
-                          );
-                    }
-
-                    return CustomScaffold(
-                      endDrawer: MangaChapterEndDrawer(
-                        detailId: detailId!,
-                        chapterId: chapterId!,
-                        chapters: model.chapters,
-                      ),
-                      endDrawerEnableOpenDragGesture: true,
-                      body: _body(
-                        detailId: detailId!,
-                        model: model,
-                      ),
-                    );
-                  },
+                return CustomScaffold(
+                  endDrawer: MangaChapterEndDrawer(
+                    detailId: detailId!,
+                    chapterId: chapterId!,
+                    chapters: model.chapters,
+                  ),
+                  endDrawerEnableOpenDragGesture: true,
+                  body: _body(
+                    detailId: detailId!,
+                    model: model,
+                  ),
                 );
               case MangaInitial:
               case MangaLoading:

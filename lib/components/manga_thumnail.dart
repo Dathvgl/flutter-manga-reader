@@ -58,7 +58,7 @@ class MangaThumnail extends StatelessWidget {
   }
 }
 
-class MangaThumnailDetail extends StatelessWidget {
+class MangaThumnailDetail extends StatefulWidget {
   final double? height;
   final BoxFit? fit;
   final MangaThumnailModel model;
@@ -70,9 +70,22 @@ class MangaThumnailDetail extends StatelessWidget {
     required this.model,
   });
 
-  Future<Size> _imageSize(String url) async {
+  @override
+  State<MangaThumnailDetail> createState() => _MangaThumnailDetailState();
+}
+
+class _MangaThumnailDetailState extends State<MangaThumnailDetail> {
+  late final Future<Size> _size;
+
+  @override
+  void initState() {
+    super.initState();
+    _size = _imageSize();
+  }
+
+  Future<Size> _imageSize() async {
     Completer<Size> completer = Completer();
-    Image provider = Image(image: CachedNetworkImageProvider(url));
+    Image provider = Image(image: CachedNetworkImageProvider(widget.model.src));
 
     provider.image.resolve(const ImageConfiguration()).addListener(
       ImageStreamListener(
@@ -90,7 +103,7 @@ class MangaThumnailDetail extends StatelessWidget {
   Widget _loading() {
     return CustomShimmer(
       child: CustomShimmerBox(
-        height: height,
+        height: widget.height,
       ),
     );
   }
@@ -100,7 +113,7 @@ class MangaThumnailDetail extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: imageProvider,
-          fit: fit,
+          fit: widget.fit,
         ),
       ),
     );
@@ -108,12 +121,12 @@ class MangaThumnailDetail extends StatelessWidget {
 
   Widget _detailThumnail(Size? size) {
     return CachedNetworkImage(
-      height: height,
-      imageUrl: model.src,
+      height: widget.height,
+      imageUrl: widget.model.src,
       imageBuilder: (context, imageProvider) {
         final child = _detailWidget(imageProvider);
 
-        if (height != null) {
+        if (widget.height != null) {
           return child;
         } else {
           if (size == null) return child;
@@ -125,7 +138,7 @@ class MangaThumnailDetail extends StatelessWidget {
         }
       },
       placeholder: (context, url) => SizedBox(
-        height: height,
+        height: widget.height,
         child: _loading(),
       ),
       errorWidget: (context, url, error) => const Icon(Icons.error),
@@ -134,10 +147,10 @@ class MangaThumnailDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return height != null
+    return widget.height != null
         ? _detailThumnail(null)
         : FutureBuilder(
-            future: _imageSize(model.src),
+            future: _size,
             builder: (context, snapshot) {
               switch (snapshot.connectionState) {
                 case ConnectionState.none:

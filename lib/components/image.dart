@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class ImageAutoHeight extends StatelessWidget {
+class ImageAutoHeight extends StatefulWidget {
   final String url;
 
   const ImageAutoHeight({
@@ -11,9 +11,22 @@ class ImageAutoHeight extends StatelessWidget {
     required this.url,
   });
 
+  @override
+  State<ImageAutoHeight> createState() => _ImageAutoHeightState();
+}
+
+class _ImageAutoHeightState extends State<ImageAutoHeight> {
+  late final Future<Size> _size;
+
+  @override
+  void initState() {
+    super.initState();
+    _size = _imageSize();
+  }
+
   Future<Size> _imageSize() async {
     Completer<Size> completer = Completer();
-    Image provider = Image(image: CachedNetworkImageProvider(url));
+    Image provider = Image(image: CachedNetworkImageProvider(widget.url));
 
     provider.image.resolve(const ImageConfiguration()).addListener(
       ImageStreamListener(
@@ -30,7 +43,7 @@ class ImageAutoHeight extends StatelessWidget {
 
   Widget _detailImage(Size size) {
     return CachedNetworkImage(
-      imageUrl: url,
+      imageUrl: widget.url,
       imageBuilder: (context, imageProvider) {
         return AspectRatio(
           aspectRatio: size.aspectRatio,
@@ -57,7 +70,7 @@ class ImageAutoHeight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: _imageSize(),
+      future: _size,
       builder: (context, snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.none:

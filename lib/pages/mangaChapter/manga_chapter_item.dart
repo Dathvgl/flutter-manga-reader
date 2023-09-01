@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_crawl/blocs/user/user_bloc.dart';
 import 'package:flutter_crawl/components/image.dart';
+import 'package:flutter_crawl/cubits/userCultivation/user_cultivation_cubit.dart';
 import 'package:flutter_crawl/extensions/double.dart';
 import 'package:flutter_crawl/models/manga/manga_chapter_image.dart';
 import 'package:flutter_crawl/models/user/user_follow_manga.dart';
-import 'package:flutter_crawl/pages/mangaChapter/manga_chapter_page.dart';
 import 'package:go_router/go_router.dart';
 
 class MangaChapterItem extends StatefulWidget {
-  const MangaChapterItem({super.key});
+  final String detailId;
+  final MangaChapterImageModel model;
+
+  const MangaChapterItem({
+    super.key,
+    required this.detailId,
+    required this.model,
+  });
 
   @override
   State<MangaChapterItem> createState() => _MangaChapterItemState();
@@ -18,7 +25,11 @@ class MangaChapterItem extends StatefulWidget {
 class _MangaChapterItemState extends State<MangaChapterItem> {
   final _controller = ScrollController();
   final _heightBar = AppBar().preferredSize.height;
+
   final _visible = ValueNotifier<bool>(true);
+  final _scroll = ValueNotifier<bool>(true);
+
+  late final List<MangaChapterCurrentImageModel> _images;
 
   @override
   void initState() {
@@ -30,13 +41,24 @@ class _MangaChapterItemState extends State<MangaChapterItem> {
       if (scrollOffset > _heightBar &&
           scrollOffset < maxScrollHeight - _heightBar) {
         _visible.value = false;
+        _scroll.value = false;
       }
 
       if (scrollOffset <= _heightBar ||
           scrollOffset >= maxScrollHeight - _heightBar) {
         _visible.value = true;
+        _scroll.value = true;
       }
     });
+
+    final state = context.read<UserCultivationCubit>().state;
+    context.read<UserCultivationCubit>().update(
+          idCanhGioi: state.cultivation.idCanhGioi,
+          tuVi: state.cultivation.tuVi,
+          tuViTheo: 1,
+        );
+
+    _images = widget.model.current?.chapters ?? [];
   }
 
   @override
@@ -97,7 +119,7 @@ class _MangaChapterItemState extends State<MangaChapterItem> {
   }) {
     return Positioned(
       child: Align(
-        alignment: FractionalOffset.bottomCenter,
+        alignment: Alignment.bottomCenter,
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           width: double.infinity,
@@ -140,41 +162,51 @@ class _MangaChapterItemState extends State<MangaChapterItem> {
 
   @override
   Widget build(BuildContext context) {
-    final inherited = MangaChapterPageInherited.of(context) ??
-        const MangaChapterPageInherited(
-          detailId: "",
-          model: MangaChapterImageModel(chapters: []),
-          child: SizedBox(),
-        );
-
-    final images = inherited.model.current?.chapters ?? [];
-
     return SizedBox(
       height: double.maxFinite,
       child: Stack(
         children: [
           InteractiveViewer(
-            child: SingleChildScrollView(
-              controller: _controller,
-              child: Column(
-                children: [
-                  SizedBox(height: AppBar().preferredSize.height),
-                  GestureDetector(
-                    onTap: () => _visible.value = !_visible.value,
-                    child: ListView.builder(
-                      primary: false,
-                      shrinkWrap: true,
-                      itemCount: images.length,
-                      itemBuilder: (context, index) {
-                        final item = images[index];
-                        return ImageAutoHeight(
+            child: GestureDetector(
+              onTap: () {
+                if (!_scroll.value) {
+                  _visible.value = !_visible.value;
+                }
+              },
+              child: ListView.builder(
+                controller: _controller,
+                itemCount: _images.length,
+                itemBuilder: (context, index) {
+                  final item = _images[index];
+
+                  if (index == 0) {
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(height: AppBar().preferredSize.height),
+                        ImageAutoHeight(
                           url: item.src,
-                        );
-                      },
-                    ),
-                  ),
-                  SizedBox(height: AppBar().preferredSize.height),
-                ],
+                        ),
+                      ],
+                    );
+                  }
+
+                  if (index == _images.length - 1) {
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ImageAutoHeight(
+                          url: item.src,
+                        ),
+                        SizedBox(height: AppBar().preferredSize.height),
+                      ],
+                    );
+                  }
+
+                  return ImageAutoHeight(
+                    url: item.src,
+                  );
+                },
               ),
             ),
           ),
@@ -184,8 +216,8 @@ class _MangaChapterItemState extends State<MangaChapterItem> {
               return Visibility(
                 visible: value,
                 child: header(
-                  detailId: inherited.detailId,
-                  model: inherited.model,
+                  detailId: widget.detailId,
+                  model: widget.model,
                 ),
               );
             },
@@ -205,8 +237,8 @@ class _MangaChapterItemState extends State<MangaChapterItem> {
                   return Visibility(
                     visible: value,
                     child: footer(
-                      detailId: inherited.detailId,
-                      model: inherited.model,
+                      detailId: widget.detailId,
+                      model: widget.model,
                       follow: follow,
                     ),
                   );
