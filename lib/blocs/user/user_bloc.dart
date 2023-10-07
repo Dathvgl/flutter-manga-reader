@@ -70,7 +70,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
           );
 
           await _userRepository.putUserFollowManga(
-            id: data.id,
+            id: event.mangaId,
             token: idToken,
             type: event.mangaType,
             replace:
